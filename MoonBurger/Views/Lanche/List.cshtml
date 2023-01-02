@@ -4,6 +4,7 @@
     ViewData["Title"] = "Lanches";
 }
 <div class="container">
+    <h2>@Model.CategoriaAtual</h2>
     <div class="row">   
         @foreach(var lanche in Model.Lanches)
         {
