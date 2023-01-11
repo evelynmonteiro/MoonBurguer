@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MoonBurger.Repositories.Interfaces;
 using MoonBurger.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MoonBurger.Controllers
 {
@@ -15,11 +16,13 @@ namespace MoonBurger.Controllers
             _carrinhoCompra = carrinhoCompra;
         }
 
+        [Authorize]
         public IActionResult Checkout()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Checkout(Pedido pedido)
         {
